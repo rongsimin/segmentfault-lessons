@@ -15,7 +15,8 @@ public class FunctionDemo {
         System.out.println(longToString.apply(1L));
 
         // "1" -> 1L -> "1"
-        Long value = stringToLong.compose(String::valueOf).apply(1L);
+        Long value = stringToLong.compose(longToString).apply(1L);
+        String apply = longToString.compose(stringToLong).apply("99");
 
     }
 
