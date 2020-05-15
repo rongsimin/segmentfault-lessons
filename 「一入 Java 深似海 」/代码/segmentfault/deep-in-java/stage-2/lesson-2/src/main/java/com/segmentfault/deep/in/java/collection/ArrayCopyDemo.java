@@ -10,8 +10,12 @@ public class ArrayCopyDemo {
 
         arraycopy(strings1, strings1);
 
+        Father[] sons = new Son[]{new Son(),new Son()};
+        arraycopy(sons,sons);
+        // 以下是javascript的 dictionary的语法
         // value[1] = 1
         // value['a'] = a
+        //在java中它是下面这种，当然语法是不一样的
 
         int value = Integer.MAX_VALUE;
 
@@ -25,7 +29,7 @@ public class ArrayCopyDemo {
         // Java 中默认是没有正整数（无符号整数）
         // C unsigned int(size_t)
 
-        List<String> values = List.of();
+//        List<String> values = List.of();
 
         // values.size() == 0
         // values.size() < 1
@@ -34,5 +38,15 @@ public class ArrayCopyDemo {
 
     public static void arraycopy(Object[] src, Object[] destination) {
     }
+
+    public static void arraycopy(Father[] src, Father[] destination) {
+    }
+
+
+}
+class Father{
+
+}
+class Son extends Father{
 
 }

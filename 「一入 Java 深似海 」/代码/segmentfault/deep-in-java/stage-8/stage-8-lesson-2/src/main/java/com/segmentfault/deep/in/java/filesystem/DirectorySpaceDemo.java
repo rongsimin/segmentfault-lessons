@@ -5,8 +5,6 @@ import java.io.FileFilter;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-import static com.sun.tools.doclint.Entity.sum;
-
 public class DirectorySpaceDemo {
 
     // 文件 -> File.length()

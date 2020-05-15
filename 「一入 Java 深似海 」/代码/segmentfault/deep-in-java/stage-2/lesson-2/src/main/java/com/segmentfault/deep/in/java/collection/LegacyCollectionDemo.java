@@ -5,13 +5,14 @@ import java.util.*;
 public class LegacyCollectionDemo {
 
     public static void main(String[] args) {
-
+        Hashtable<String,String> hashtable = new Hashtable<>();
+        hashtable.put(null,"hello");
         // 几乎所有遗留集合实现是线程安全
-        vectorVsList();
-        vectorVsStack();
+//        vectorVsList();
+        /*vectorVsStack();
         hashtableVsHashMap();
         enumerationVsEnum();
-        bitSet();
+        bitSet();*/
     }
 
     private static void bitSet() {
@@ -63,9 +64,11 @@ public class LegacyCollectionDemo {
         // Vector 数组实现，对比 ArrayList，实现了 List
         // Vector 所有操作线程安全的，使用关键字“synchronized”修饰
         Vector<String> vector = new Vector<>();
+        vector.add(null);
         List<String> list = new ArrayList<>();
         // 如果 Vector 在方法内部使用的话， synchronized 修饰后的方法基本上没有线程同步的消耗
         vector.add("A");
         list.add("A");
+        System.err.println(vector);
     }
 }
