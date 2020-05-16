@@ -1,9 +1,6 @@
 package com.segmentfault.deep.in.java.collection.advanced;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.ConcurrentModificationException;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class FailFastVsFailSafeDemo {
@@ -16,11 +13,13 @@ public class FailFastVsFailSafeDemo {
     }
 
     private static void demoFailSafe() {
-        removeForEach(new CopyOnWriteArrayList<>(List.of(1, 2, 3)));
+        List<Integer> list = new ArrayList<>(Arrays.asList(1,2,3));
+
+        removeForEach(new CopyOnWriteArrayList<>(list));
     }
 
     private static void demoFailFast() {
-        removeForEach(new ArrayList(List.of(1, 2, 3)));
+        removeForEach(new ArrayList<>(Arrays.asList(1,2,3)));
     }
 
     private static void removeForEach(Collection<?> values) {

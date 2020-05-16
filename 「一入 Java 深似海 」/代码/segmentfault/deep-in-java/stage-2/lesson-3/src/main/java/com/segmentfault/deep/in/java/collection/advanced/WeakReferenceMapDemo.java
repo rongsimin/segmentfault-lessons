@@ -27,7 +27,7 @@ public class WeakReferenceMapDemo {
         // WeakReference 继承为 Reference，Reference 入队 ReferenceQueue
         // 获取引用对象
         for (int i = 0; i < 100; i++) {
-            Thread.sleep(1 * 1000);
+            Thread.sleep(10 * 1000);
             System.out.println(userReference.get());
         }
 

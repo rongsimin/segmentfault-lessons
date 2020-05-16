@@ -8,10 +8,10 @@ public class PriorityQueueDemo {
 
         PriorityQueue<Integer> integerQueue = new PriorityQueue<>();
 
-        integerQueue.add(1);
-        integerQueue.add(1);
-        integerQueue.add(2);
         integerQueue.add(3);
+        integerQueue.add(2);
+        integerQueue.add(1);
+        integerQueue.add(1);
 
         integerQueue.forEach(System.out::println);
 

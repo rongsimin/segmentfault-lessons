@@ -1,7 +1,9 @@
 package com.segmentfault.deep.in.java.collection.advanced;
 
 import java.util.Collections;
+import java.util.Enumeration;
 import java.util.List;
+import java.util.Vector;
 
 public class EmptyCollectionDemo {
 
@@ -15,6 +17,16 @@ public class EmptyCollectionDemo {
         // 2. 其次是 Collection
         // 3. 再者是 List 或 Set
         // 禁止使用具体类型，比如：ArrayList，LinkedHashSet
+        Vector<String> vector = new Vector<>();
+        vector.add("a");
+        vector.add("b");
+        vector.add("c");
+
+        Enumeration<String> enumeration = (Enumeration<String>) new Vector();
+
+        while (enumeration.hasMoreElements()){
+            System.out.println(enumeration.nextElement());
+        }
     }
 
 

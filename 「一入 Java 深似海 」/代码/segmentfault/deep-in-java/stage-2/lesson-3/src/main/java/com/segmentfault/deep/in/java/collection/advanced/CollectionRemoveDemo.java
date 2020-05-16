@@ -1,6 +1,7 @@
 package com.segmentfault.deep.in.java.collection.advanced;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -8,7 +9,7 @@ public class CollectionRemoveDemo {
 
     public static void main(String[] args) {
 
-        List<Integer> values = new ArrayList(List.of(1, 2, 3));
+        List<Integer> values = new ArrayList(Arrays.asList(1, 2, 3));
 
         // 常规做法
         Iterator<Integer> iterator = values.iterator();
@@ -17,7 +18,7 @@ public class CollectionRemoveDemo {
             iterator.remove();
         }
 
-        values = new ArrayList(List.of(1, 2, 3));
+        values = new ArrayList(Arrays.asList(1, 2, 3));
 
         //　成功删除
         int size = values.size();
@@ -27,15 +28,20 @@ public class CollectionRemoveDemo {
             System.out.println(values.size());
         }
 
-        values = new ArrayList(List.of(1, 2, 3));
+        values = new ArrayList(Arrays.asList(1, 2, 3));
 
         size = values.size();
         for (int i = 0; i < size; i++) {
             values.remove(0);
         }
+        //这样会导致删不干净，删完还剩下一个元素
+		values = new ArrayList(Arrays.asList(1, 2, 3));
+        for (int i = 0;i < values.size();i++){
+        	values.remove(i);
+		}
 
         // 失败删除: for-each 语法
-        values = new ArrayList(List.of(1, 2, 3));
+        values = new ArrayList(Arrays.asList(1, 2, 3));
 
         for (Integer value : values) {
             values.remove(value);
